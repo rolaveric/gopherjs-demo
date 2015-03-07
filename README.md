@@ -12,7 +12,7 @@ A simple example of a Go struct being exported for use in JS code.
 
 ```
 cd pet/js
-gopherjs build main.go
+gopherjs build main.go  
 node index.js
 ```
 
@@ -21,3 +21,18 @@ A more complex example of a Go library that could be reused between Go and JS ap
 
 Note that, for brevity's sake, the `user` example does not include as much type checking as it should.
 For example, `RegisterDBJS(jsdb)` should check that `jsdb` really does include a `Query()` function.
+
+To test in Go:
+
+```
+cd user/go
+go run main.go
+```
+
+To test in NodeJS:
+
+```
+cd user/js
+gopherjs build main.go
+node index.js
+```
